@@ -6,7 +6,7 @@ rule all:
     input:
         expand("{DATA_DIR}/C.txt", DATA_DIR=DATA_DIR)
     output:
-        'wc_D.txt'
+        exapnd("{DATA_DIR}/wc_D.txt", DATA_DIR=DATA_DIR)
     shell:
         "wc -w {input} > {output}"
 
