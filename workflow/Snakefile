@@ -1,3 +1,7 @@
+configfile: "config/config.yaml"
+
+DATA_DIR = config['data_dir']
+
 rule all:
     input:
         'C.txt'
