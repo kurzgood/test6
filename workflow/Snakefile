@@ -4,7 +4,7 @@ DATA_DIR = config['data_dir']
 
 rule all:
     input:
-        '{DATA_DIR}/C.txt'
+        expand('{DATA_DIR}/C.txt', DATA_DIR=DATA_DIR)
     output:
         'wc_D.txt'
     shell:
