@@ -4,9 +4,10 @@ DATA_DIR = config['data_dir']
 
 rule all:
     input:
-        expand("{DATA_DIR}/C.txt", DATA_DIR=DATA_DIR)
-    output:
-        expand("{DATA_DIR}/wc_D.txt",  DATA_DIR=DATA_DIR)
-    shell:
-        "wc -w {input} > {output}"
+        expand("{DATA_DIR}/sample.txt", DATA_DIR=DATA_DIR)
 
+rule sample:
+    output:
+        expand("{DATA_DIR}/sample.txt", DATA_DIR=DATA_DIR)
+    script:
+        "scripts/sample.py"
